@@ -1,39 +1,50 @@
 package engineer.omnis.graphviz.components.graph;
 
-import engineer.omnis.graphviz.MainFrame;
-import engineer.omnis.graphviz.Utility;
 import engineer.omnis.graphviz.components.GraphEdgeComponent;
 import engineer.omnis.graphviz.components.GraphNodeComponent;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.Point2D;
 
 public class WeightLabelComponent extends JComponent implements AddableGraphChild {
-    public static final int containerRadius = 20;
+    public static final int CONTAINER_RADIUS = 15;
     private final JLabel label;
 
     public WeightLabelComponent(String labelText, GraphEdgeComponent edge) {
+        setLayout(new BorderLayout());
+
         label = new JLabel(labelText);
+        label.setName("WeightLabel " + labelText);
+        label.setHorizontalAlignment(SwingConstants.CENTER);
+        add(label, BorderLayout.CENTER);
+
         setName("EdgeLabel <" + edge.getConnectedVertices() + ">");
         setupBounds(edge);
     }
 
     @SuppressWarnings("checkstyle:magicnumber")
     private void setupBounds(GraphEdgeComponent edge) {
-        Rectangle edgeBoundingBox = edge.getBoundingBox();
         GraphNodeComponent from = edge.getFrom();
         GraphNodeComponent to = edge.getTo();
 
-        int textWidth = 32;
-        int textHeight = 50;
-        int textTopPadding = 32;
-        int labelX = Utility.clamp(edgeBoundingBox.x + edgeBoundingBox.width / 2 - textWidth / 2,
-                0, MainFrame.SCREEN_WIDTH - textWidth);
-        int labelY = Utility.clamp(edgeBoundingBox.y + edgeBoundingBox.height / 2 - textHeight / 2 + textTopPadding,
-                0, MainFrame.SCREEN_HEIGHT - textHeight);
+        double distanceFromSource = 0.2;
+        Point2D fromPos = from.getCenterPos();
+        Point2D toPos = to.getCenterPos();
 
-        setBounds(labelX, labelY, containerRadius * 2, containerRadius * 2);
+        fromPos.setLocation(fromPos.getX() - CONTAINER_RADIUS, fromPos.getY() - CONTAINER_RADIUS);
+        toPos.setLocation(toPos.getX() - CONTAINER_RADIUS, toPos.getY() - CONTAINER_RADIUS);
+
+        double xLength = toPos.getX() - fromPos.getX();
+        double yLength = toPos.getY() - fromPos.getY();
+        double x = (xLength) * distanceFromSource + fromPos.getX();
+        double y = (yLength) * distanceFromSource + fromPos.getY();
+
+        int labelX = (int) x;
+        int labelY = (int) y;
+
+        setBounds(labelX, labelY, CONTAINER_RADIUS * 2, CONTAINER_RADIUS * 2);
     }
 
     @Override
@@ -43,11 +54,9 @@ public class WeightLabelComponent extends JComponent implements AddableGraphChil
 
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-        Ellipse2D e = new Ellipse2D.Double(0.0, 0.0, containerRadius * 2, containerRadius * 2);
+        Ellipse2D e = new Ellipse2D.Double(0.0, 0.0, CONTAINER_RADIUS * 2, CONTAINER_RADIUS * 2);
         g2d.setColor(GraphComponentStyle.DEFAULT_BACKGROUND);
         g2d.fill(e);
-
-
     }
 
     @Override
@@ -62,8 +71,8 @@ public class WeightLabelComponent extends JComponent implements AddableGraphChil
 
     @Override
     public void updateAppearance(GraphComponentStyle appearance) {
-        setFont(appearance.weightLabelFont());
-        setForeground(appearance.edgeWeightLabelColor());
+        label.setFont(appearance.weightLabelFont());
+        label.setForeground(appearance.edgeWeightLabelColor());
     }
 
     @Override

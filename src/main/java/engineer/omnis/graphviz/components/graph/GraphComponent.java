@@ -166,7 +166,13 @@ public class GraphComponent extends JPanel {
             return;
         }
 
-        if (first.distanceTo(second) < first.getRadius() + second.getRadius() + WeightLabelComponent.containerRadius * 2) {
+        double distanceSquared = first.distanceTo(second);
+        // TODO: 23.08.2023 Dynamic offset calculation
+        double offset = 20.0;
+        double allowedDistanceSquared = first.getRadius() + second.getRadius() + offset;
+        allowedDistanceSquared *= allowedDistanceSquared;
+
+        if (distanceSquared < allowedDistanceSquared) {
             return;
         }
 

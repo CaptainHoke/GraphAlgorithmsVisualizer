@@ -64,9 +64,9 @@ public class GraphEdgePair implements AddableGraphChild {
 
     @Override
     public void addToGraphImpl(GraphComponent graph) {
+        graph.add(weightLabel);
         graph.add(mainEdge);
         graph.add(secondEdge);
-        graph.add(weightLabel);
     }
 
     @Override
