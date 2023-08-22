@@ -1,6 +1,6 @@
-package engineer.omnis.graphviz.components.graph.orders;
+package engineer.omnis.graphviz.graph.orders;
 
-import engineer.omnis.graphviz.components.graph.UpdatableGraphChild;
+import engineer.omnis.graphviz.graph.UpdatableGraphChild;
 import lombok.Getter;
 
 public abstract class RepaintGraphOrder implements ExternalGraphOrder {

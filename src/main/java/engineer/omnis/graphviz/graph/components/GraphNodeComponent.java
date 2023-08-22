@@ -1,9 +1,9 @@
-package engineer.omnis.graphviz.components;
+package engineer.omnis.graphviz.graph.components;
 
 import engineer.omnis.graphviz.Utility;
-import engineer.omnis.graphviz.components.graph.AddableGraphChild;
-import engineer.omnis.graphviz.components.graph.GraphComponent;
-import engineer.omnis.graphviz.components.graph.GraphComponentStyle;
+import engineer.omnis.graphviz.graph.DefaultMouseListener;
+import engineer.omnis.graphviz.graph.AddableGraphChild;
+import engineer.omnis.graphviz.graph.GraphComponentStyle;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;

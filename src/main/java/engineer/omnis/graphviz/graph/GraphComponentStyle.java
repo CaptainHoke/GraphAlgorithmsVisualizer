@@ -1,4 +1,4 @@
-package engineer.omnis.graphviz.components.graph;
+package engineer.omnis.graphviz.graph;
 
 import java.awt.*;
 

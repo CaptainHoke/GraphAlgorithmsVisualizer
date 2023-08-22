@@ -1,7 +1,7 @@
-package engineer.omnis.graphviz.components.graph;
+package engineer.omnis.graphviz.graph.components;
 
-import engineer.omnis.graphviz.components.GraphEdgeComponent;
-import engineer.omnis.graphviz.components.GraphNodeComponent;
+import engineer.omnis.graphviz.graph.AddableGraphChild;
+import engineer.omnis.graphviz.graph.GraphComponentStyle;
 
 import javax.swing.*;
 import java.awt.*;

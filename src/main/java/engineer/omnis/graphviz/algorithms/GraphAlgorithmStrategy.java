@@ -1,8 +1,8 @@
 package engineer.omnis.graphviz.algorithms;
 
-import engineer.omnis.graphviz.components.GraphEdgePair;
-import engineer.omnis.graphviz.components.GraphNodeComponent;
-import engineer.omnis.graphviz.components.graph.orders.ExternalGraphOrder;
+import engineer.omnis.graphviz.graph.components.GraphEdgePair;
+import engineer.omnis.graphviz.graph.components.GraphNodeComponent;
+import engineer.omnis.graphviz.graph.orders.ExternalGraphOrder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

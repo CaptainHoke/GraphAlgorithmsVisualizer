@@ -1,4 +1,4 @@
-package engineer.omnis.graphviz.components.graph;
+package engineer.omnis.graphviz.graph;
 
 public enum EditModeOption {
     ADD_VERTEX("Add a Vertex"),

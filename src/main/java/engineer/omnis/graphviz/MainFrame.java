@@ -1,9 +1,9 @@
 package engineer.omnis.graphviz;
 
 import engineer.omnis.graphviz.algorithms.*;
-import engineer.omnis.graphviz.components.graph.EditModeOption;
-import engineer.omnis.graphviz.components.graph.GraphComponent;
-import engineer.omnis.graphviz.components.graph.GraphComponentStyle;
+import engineer.omnis.graphviz.graph.EditModeOption;
+import engineer.omnis.graphviz.graph.components.GraphComponent;
+import engineer.omnis.graphviz.graph.GraphComponentStyle;
 
 import javax.swing.*;
 import java.awt.*;

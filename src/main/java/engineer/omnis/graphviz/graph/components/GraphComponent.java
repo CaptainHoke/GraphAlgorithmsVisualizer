@@ -1,15 +1,17 @@
-package engineer.omnis.graphviz.components.graph;
+package engineer.omnis.graphviz.graph.components;
 
 import engineer.omnis.graphviz.GraphModel;
 import engineer.omnis.graphviz.MainFrame;
 import engineer.omnis.graphviz.Utility;
 import engineer.omnis.graphviz.algorithms.GraphAlgorithmStrategy;
-import engineer.omnis.graphviz.components.DefaultMouseListener;
-import engineer.omnis.graphviz.components.GraphEdgePair;
-import engineer.omnis.graphviz.components.GraphNodeComponent;
-import engineer.omnis.graphviz.components.graph.orders.ExternalGraphOrder;
-import engineer.omnis.graphviz.components.graph.orders.FinalizeAlgorithmOrder;
-import engineer.omnis.graphviz.components.graph.orders.RepaintGraphOrder;
+import engineer.omnis.graphviz.graph.DefaultMouseListener;
+import engineer.omnis.graphviz.graph.AddableGraphChild;
+import engineer.omnis.graphviz.graph.EditModeOption;
+import engineer.omnis.graphviz.graph.GraphComponentStyle;
+import engineer.omnis.graphviz.graph.UpdatableGraphChild;
+import engineer.omnis.graphviz.graph.orders.ExternalGraphOrder;
+import engineer.omnis.graphviz.graph.orders.FinalizeAlgorithmOrder;
+import engineer.omnis.graphviz.graph.orders.RepaintGraphOrder;
 
 import javax.swing.Timer;
 import javax.swing.*;

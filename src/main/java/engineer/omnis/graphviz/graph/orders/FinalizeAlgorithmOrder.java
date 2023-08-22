@@ -1,6 +1,6 @@
-package engineer.omnis.graphviz.components.graph.orders;
+package engineer.omnis.graphviz.graph.orders;
 
-import engineer.omnis.graphviz.components.graph.GraphComponent;
+import engineer.omnis.graphviz.graph.components.GraphComponent;
 
 public class FinalizeAlgorithmOrder implements ExternalGraphOrder {
     @Override

@@ -1,4 +1,4 @@
-package engineer.omnis.graphviz.components;
+package engineer.omnis.graphviz.graph;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
