@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE suppressions PUBLIC
+        "-//Puppy Crawl//DTD Suppressions 1.2//EN"
+        "http://www.puppycrawl.com/dtds/suppressions_1_2.dtd">
+
+<suppressions>
+    <suppress files="." checks="LineLengthCheck"/>
+
+    <suppress checks="HideUtilityClassConstructor"
+              files="ApplicationRunner.java"/>
+
+    <!-- No need for Javadoc -->
+    <suppress checks="JavadocType" files="."/>
+    <suppress checks="JavadocMethod" files="."/>
+    <suppress checks="JavadocVariable" files="."/>
+    <suppress checks="JavadocPackage" files="."/>
+
+    <!-- Way too annoying at the moment, I'm not designing a library -->
+    <suppress checks="DesignForExtension" files="."/>
+
+    <!-- No need to worry about name collisions at the moment -->
+    <suppress checks="AvoidStarImport" files="."/>
+
+    <!-- Code turns into unreadable mess with the "final"s all over the place -->
+    <suppress checks="FinalParameters" files="."/>
+</suppressions>
